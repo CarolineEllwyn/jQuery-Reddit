@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    const $content = $('#restultDiv');
+    const $content = $('#restultDiv'); 
 
     $.ajax({
         method:"GET",
@@ -12,7 +12,7 @@ $(document).ready(function(){
                     <div class="post-title"><a href="https://www.reddit.com${item.data.permalink}">${item.data.title}</a></div>
                 </div>
             `
-            $content.append(result); // lägger till post till content
+            $content.append(result); // add result from the AJAX into the content variable.
             })           
         },
         error: function(error) {
