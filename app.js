@@ -4,8 +4,8 @@ $(document).ready(function(){
 
     $.ajax({
         method:"GET",
-        url: 'https://www.reddit.com/r/funny/top.json?top=15',
-        success: function(data) {
+        url: 'https://www.reddit.com/r/funny/top.json?top=15',   //url to top 15 posts
+        success: function(data) {                               //if successful, the method retrieves a permalink and the title from API and turns it into a link named by the title
             $(data.data.children).each(function(index, item){
                 const result = `
                 <div class="post-body">
@@ -13,9 +13,7 @@ $(document).ready(function(){
                 </div>
             `
             $content.append(result); // lägger till post till content
-            })
-            console.log('successful request');
-            
+            })           
         },
         error: function(error) {
             console.log('error: ', error);
